@@ -7,6 +7,7 @@ import {
   LiveReload,
   Meta,
   Outlet,
+  Scripts,
   useCatch,
 } from "@remix-run/react";
 
@@ -61,7 +62,10 @@ function Document({
       </head>
       <body>
         {children}
-        <LiveReload />
+        <Scripts/>
+        {
+          process.env.NODE_ENV === 'development'? <LiveReload />: null
+        }
       </body>
     </html>
   );
