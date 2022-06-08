@@ -39,6 +39,7 @@ export const action: ActionFunction = async ({
   const form = await request.formData();
   const name = form.get("name");
   const content = form.get("content");
+  
   if (
     typeof name !== "string" ||
     typeof content !== "string"
@@ -139,6 +140,14 @@ export default function NewJokeRoute() {
           </button>
         </div>
       </form>
+    </div>
+  );
+}
+
+export function ErrorBoundary() {
+  return (
+    <div className="error-container">
+      Something unexpected went wrong. Sorry about that.
     </div>
   );
 }
