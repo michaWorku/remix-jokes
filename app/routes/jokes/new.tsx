@@ -7,6 +7,7 @@ import {
   useActionData,
   useCatch,
   Link,
+  Form,
 } from "@remix-run/react";
 
 import { db } from "~/utils/db.server";
@@ -89,7 +90,7 @@ export default function NewJokeRoute() {
   return (
     <div>
       <p>Add your own hilarious joke</p>
-      <form method="post">
+      <Form method="post">
         <div>
           <label>
             Name:{" "}
@@ -158,7 +159,7 @@ export default function NewJokeRoute() {
             Add
           </button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 }
